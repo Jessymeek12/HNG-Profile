@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="profile-card">
+      <img
+        src="images/profile.jpeg"
+        alt="Profile Picture"
+        data-testid="profilePicture"
+      />
+      <h1 data-testid="fullName">Jessica Anawanti</h1>
+      <h2 data-testid="jobTitle">Frontend Developer</h2>
+      <p data-testid="shortBio">
+        I am a passionate frontend developer with a keen eye for design and user
+        experience. I specialize in creating responsive, visually appealing, and
+        efficient web applications using modern technologies. Dedicated to
+        continuous learning, I strive to build interfaces that are both
+        functional and delightful for users
+      </p>
+      <div class="location" data-testid="currentLocation">
+        Port Harcourt, Nigeria
+      </div>
+      <div class="email" data-testid="emailAddress">Jasyj494@gmail.com</div>
+      <div class="social-links" data-testid="socialLinks">
+        <a
+          href="https://www.linkedin.com/in/jessica-anawanti-655047160?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+          target="_blank"
+          >LinkedIn</a
+        >
+        <a href="https://github.com/Jessymeek12" target="_blank">GitHub</a>
+        <a href="https://x.com/jessyan75421121?s=11" target="_blank">Twitter</a>
+      </div>
+      <div class="utc-time" data-testid="currentTimeUTC"></div>
+    </div>
+
+    <script>
+      function updateUTCTime() {
+        const utcTimeElement = document.querySelector(
+          '[data-testid="currentTimeUTC"]'
+        );
+        const now = new Date();
+        utcTimeElement.textContent = `Current UTC Time: ${now.toUTCString()}`;
+      }
+
+      updateUTCTime();
+    </script>
+  </body>
+</html>
